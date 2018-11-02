@@ -1,0 +1,59 @@
+.oculto{
+    display:none;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 20px 0;
+    background: #ffffff;
+}
+
+.grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carta {
+    position: relative;
+    transition: all .4s linear;
+    transform-style: preserve-3d;
+    margin: 5px;
+}
+
+.carta,
+.verso,
+.frente {
+    height: 150px;
+    width: 150px;
+}
+
+.verso,
+.frente {
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.frente {
+    z-index: 2;
+    background: #FAB942 url('../img/Verso.jpg') no-repeat center center;
+}
+
+.verso {
+    transform: rotateY(180deg);
+    background-color: #ffffff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.match,
+.cartaSelecionada {
+    transform: rotateY(180deg);
+}
+

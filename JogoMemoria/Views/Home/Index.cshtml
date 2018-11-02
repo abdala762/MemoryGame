@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Memory Game";
+}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Memory Game</title>
+
+    <link rel="stylesheet" href="~/css/home.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/home.js"></script>
+</head>
+
+<body>
+    <div id="interfacePrimeiroAcesso">
+        Nome do Jogador: <input type="text" id="inputNomeJogador" /> <input type="button" value="Iniciar Jogo" onclick="memoryGame.init()" />
+    </div>
+
+    <div id="interface" class="oculto">
+        <p>Jogador: <label id="lblNomeJogador" /></p>
+        <p> Tentativas: <label id="lblTentativas" /></p>
+        <p>  <input type="button" value="Reiniciar Jogo" onclick="memoryGame.reiniciarJogo()" /></p>
+    </div>
+
+    <div id="areaJogo"></div>
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        memoryGame.urlFinalizarJogo= '@Url.Action("FinalizarTentativa", "Home")';
+
+    });
+</script>
+
+</html>
