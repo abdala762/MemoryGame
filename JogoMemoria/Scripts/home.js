@@ -116,9 +116,9 @@ var memoryGame =
     
     inicializarGrid: function () {
 
-        var cartasGrid = memoryGame.listaCartas.concat(memoryGame.listaCartas).sort();//function () {
-        //return 0.5- Math.random();
-        //});
+        var cartasGrid = memoryGame.listaCartas.concat(memoryGame.listaCartas).sort(function () {
+        return 0.5 - Math.random();
+        });
 
         memoryGame.grid = $('<div></div>').addClass('grid');
         memoryGame.grid.click(memoryGame.eventoSelecionarCarta);
